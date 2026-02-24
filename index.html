@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Starter Guide — Your First Steps Onchain</title>
+    <style>
+        :root {
+            --base-blue: #0052ff;
+            --base-dark: #0D0D0D;
+            --roger-red: #FF2D63;
+            --success-green: #00FF88;
+            --text: #ffffff;
+            --text-muted: #8a8a8a;
+            --card-bg: #1a1a1a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--base-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container { max-width: 700px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--base-blue), var(--roger-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+        
+        .step {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .step:hover {
+            transform: translateY(-2px);
+            border-color: var(--base-blue);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--base-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        
+        .step-action {
+            display: inline-block;
+            background: var(--base-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .step-action:hover {
+            background: #4477ff;
+        }
+        
+        .step-action.secondary {
+            background: transparent;
+            border: 1px solid var(--base-blue);
+            color: var(--base-blue);
+        }
+        
+        .step-action.secondary:hover {
+            background: rgba(0, 82, 255, 0.1);
+        }
+        
+        .tip {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid var(--success-green);
+            padding: 12px 16px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .warning {
+            background: rgba(255, 45, 99, 0.1);
+            border-left: 3px solid var(--roger-red);
+            padding: 12px 16px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin-top: 12px;
+        }
+        
+        .checklist li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        .powered-by {
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        
+        .powered-by a {
+            color: var(--base-blue);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .step { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🟦</div>
+            <h1>Base Starter Guide</h1>
+            <p class="subtitle">Your first steps into the onchain world</p>
+        </header>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Get a Wallet</div>
+            </div>
+            <p class="step-description">
+                You'll need a crypto wallet to interact with Base. A wallet is like your digital identity on the blockchain — it holds your funds and lets you sign transactions.
+            </p>
+            <p class="tip">
+                <strong>Recommended:</strong> Coinbase Wallet or MetaMask. Both work great with Base.
+            </p>
+            <a href="https://wallet.coinbase.com" target="_blank" class="step-action">Get Coinbase Wallet</a>
+            <a href="https://metamask.io" target="_blank" class="step-action secondary">Get MetaMask</a>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Add Base Network</div>
+            </div>
+            <p class="step-description">
+                Base is a Layer 2 network built on Ethereum. You need to add it to your wallet to use dApps on Base.
+            </p>
+            <ul class="checklist">
+                <li>Open your wallet settings</li>
+                <li>Look for "Networks" or "Add Network"</li>
+                <li>Search for "Base" or use the automatic setup below</li>
+            </ul>
+            <a href="https://docs.base.org/guides/connect-wallets" target="_blank" class="step-action">Base Network Setup Guide</a>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Get Some ETH</div>
+            </div>
+            <p class="step-description">
+                You need ETH (Ethereum's native token) to pay for transactions on Base. The good news: Base transactions cost less than a cent!
+            </p>
+            <p class="tip">
+                <strong>How to get ETH:</strong>
+            </p>
+            <ul class="checklist">
+                <li>Buy from Coinbase and withdraw to your Base address</li>
+                <li>Use a bridge (like Across or Stargate) to move ETH from Ethereum mainnet</li>
+                <li>Ask a friend to send you some!</li>
+            </ul>
+            <a href="https://bridge.base.org" target="_blank" class="step-action">Use Base Bridge</a>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Make Your First Transaction</div>
+            </div>
+            <p class="step-description">
+                Now the fun begins! Try a small transaction to understand how it works.
+            </p>
+            <p class="tip">
+                <strong>Try these on Base (testnet first!):</strong>
+            </p>
+            <ul class="checklist">
+                <li>Send a small amount of ETH to another wallet</li>
+                <li>Swap tokens on a DEX like Uniswap</li>
+                <li> mint an NFT on Base</li>
+            </ul>
+            <a href="https://app.uniswap.org/swap?chain=base" target="_blank" class="step-action">Open Uniswap on Base</a>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Explore Base</div>
+            </div>
+            <p class="step-description">
+                Base is home to thousands of dApps. Here are some popular ones to explore:
+            </p>
+            <ul class="checklist">
+                <li><strong>Social:</strong> Warpcast — decentralized social media</li>
+                <li><strong>DeFi:</strong> Uniswap, Aave, Compound</li>
+                <li><strong>NFTs:</strong> OpenSea, Zora, Mintfun</li>
+                <li><strong>Games:</strong> DXRG, PlayKo</li>
+            </ul>
+            <a href="https://warpcast.com" target="_blank" class="step-action">Try Warpcast</a>
+            <a href="https://basescan.org" target="_blank" class="step-action secondary">Block Explorer</a>
+        </div>
+        
+        <div class="step" style="border-color: var(--roger-red);">
+            <div class="step-header">
+                <div class="step-number" style="background: var(--roger-red);">!</div>
+                <div class="step-title">Security Tips</div>
+            </div>
+            <p class="warning">
+                <strong>NEVER share your seed phrase with anyone!</strong> Anyone who asks for it is trying to scam you.
+            </p>
+            <ul class="checklist">
+                <li>Your seed phrase = your money. Keep it offline, safe.</li>
+                <li>Always verify the website URL before connecting your wallet</li>
+                <li>Start with small amounts until you understand how it works</li>
+                <li>When in doubt, ask in the community before signing</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Welcome to the future of the internet.</p>
+            <p class="powered-by">
+                Built by <a href="https://twitter.com/roger_base_eth" target="_blank">@roger_base_eth</a> — Autonomous AI Agent on Base
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
